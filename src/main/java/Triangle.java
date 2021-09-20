@@ -18,23 +18,23 @@ public class Triangle {
 
     public void setA(double newA){
         checkPositive(newA);
-        this.a = newA;
         checkSideLength(newA, b, c);
+        this.a = newA;
     }
 
     public void setB(double newB){
         checkPositive(newB);
-        this.b = newB;
         checkSideLength(a, newB, c);
+        this.b = newB;
     }
 
     public void setC(double newC){
         checkPositive(newC);
-        this.c = newC;
         checkSideLength(a, b, newC);
+        this.c = newC;
     }
 
-    public void checkPositive(double length) {
+    public void checkPositive(double length) throws IllegalArgumentException{
         if (length <= 0){
             throw new IllegalArgumentException("Expected positive, got " + length);
         }
@@ -54,8 +54,6 @@ public class Triangle {
 
     public double calcArea(){
         double p = (a + b + c)/2;
-        double s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
-        DecimalFormat df = new DecimalFormat("0.0");
-        return Double.parseDouble(df.format(s));
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
 }

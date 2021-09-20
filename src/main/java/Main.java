@@ -5,7 +5,9 @@ public class Main {
         //System.out.println(rectangle.calcArea());
 
         Triangle triangle = new Triangle(3, 4, 5);
-        //triangle.setA(3);
+        triangle.setA(3);
+        //triangle.setB(7);
+
         System.out.println(triangle.calcArea());
     }
 }
